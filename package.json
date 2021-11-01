@@ -4,7 +4,6 @@
   "scripts": {
     "start": "next dev ./src",
     "build": "next build ./src",
-    "postbuild": "next-sitemap",
     "start:prod": "next start ./src",
     "lint": "next lint ./src"
   },
