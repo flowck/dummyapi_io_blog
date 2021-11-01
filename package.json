@@ -4,6 +4,7 @@
   "scripts": {
     "start": "next dev ./src",
     "build": "next build ./src",
+    "postbuild": "mv ./src/.next ./.next",
     "start:prod": "next start ./src",
     "lint": "next lint ./src"
   },
