@@ -2,10 +2,11 @@
   "name": "booking-system",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev ./src",
+    "build": "next build ./src",
+    "postbuild": "mv ./src/.next ./.next",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint ./src"
   },
   "dependencies": {
     "antd": "^4.16.13",
