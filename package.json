@@ -1,5 +1,5 @@
 {
-  "name": "booking-system",
+  "name": "dummyioblog",
   "private": true,
   "scripts": {
     "dev": "next dev ./src",
