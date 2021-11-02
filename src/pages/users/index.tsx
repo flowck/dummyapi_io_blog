@@ -22,19 +22,15 @@ const UsersHome: NextPage<Props> = ({ users }) => {
 
       <h1>Users</h1>
 
-      {/* <pre>
-        <code>{JSON.stringify(users, null, 2)}</code>
-      </pre> */}
-
       <div className={styles.grid}>{renderUsers()}</div>
     </section>
   );
 };
 
-export async function getServerSideProps(context: GetServerSideProps) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const users = await getUsers();
 
   return { props: { users } };
-}
+};
 
 export default UsersHome;
