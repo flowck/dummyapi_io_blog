@@ -4,26 +4,26 @@ import { NextPage, GetServerSideProps } from "next";
 import { getUser } from "modules/users/services/userService";
 
 interface Props {
-  id: string;
+  userId: string;
   user: UserObj;
 }
 
-const UserDetails: NextPage<Props> = ({ user, id }) => {
+const UserDetails: NextPage<Props> = ({ user, userId }) => {
   return (
     <section>
       <Head>
-        <title>{id}</title>
+        <title>{userId}</title>
       </Head>
 
-      <h1>User {id}</h1>
+      <h1>User {userId}</h1>
     </section>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const id = params?.userId as string;
-  const user = await getUser(id as string);
-  return { props: { user, id } };
+  const { userId } = params as Record<string, string>;
+  const user = await getUser(userId);
+  return { props: { user, userId } };
 };
 
 export default UserDetails;

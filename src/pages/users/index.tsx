@@ -27,7 +27,7 @@ const UsersHome: NextPage<Props> = ({ users }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const users = await getUsers();
 
   return { props: { users } };
